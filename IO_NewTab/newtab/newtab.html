@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新标签页</title>
+    <link rel="stylesheet" href="newtab.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="searchbox">
+            <!-- 这里由于chrome打开新标签页时会默认聚焦到顶部地址栏autofocus不会生效，可在标签页任意点击聚焦到搜索框 -->
+            <input type="text" id="searchinput" autofocus>
+        </div>
+    </div>
+    <div class="aside">
+    </div>
+
+    <script src="defaultConfig.js"></script>
+    <script src="../utils/chromeAPI.js"></script>
+    <script src="../utils/tools.js"></script>
+    <script src="init.js"></script>
+    <script src="newtab.js"></script>
+</body>
+
+</html>

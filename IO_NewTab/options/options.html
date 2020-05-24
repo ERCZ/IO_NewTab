@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Options</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+    <div class="searchbox">
+        <h2>搜索框样式</h2>
+        <div>
+            <input type="text" value="Example Text 示例文本" id="searchboxexample">
+        </div>
+        <div>
+            <label for="bordercolor">边框颜色：</label>
+            <input type="color" name="bordercolor" id="bordercolor">
+        </div>
+        <div>
+            <label for="borderradius">边框圆角：</label>
+            <input type="range" name="borderradius" id="borderradius" min="0" max="25">
+        </div>
+        <div>
+            <label for="inputbgcolor">背景颜色：</label>
+            <input type="color" name="inputbgcolor" id="inputbgcolor">
+            <label for="istransparent">设为透明<input type="checkbox" name="istransparent" id="istransparent"></label>
+        </div>
+        <div>
+            <label for="fontcolor">文字颜色：</label>
+            <input type="color" name="fontcolor" id="fontcolor">
+        </div>
+        <div>
+            <label for="fontsize">文字大小：</label>
+            <input type="range" name="fontsize" id="fontsize" max="40" min="12">
+        </div>
+    </div>
+    <div class="bg">
+        <h2>背景样式</h2>
+        <div>
+            <span>背景来源：</span>
+            <label for="bingbg">必应每日壁纸</label>
+            <input type="radio" name="bgtype" id="bingbg">
+            <label for="userbg">自定义壁纸</label>
+            <input type="radio" name="bgtype" id="userbg">
+            <div id="bgimagewrap">
+                <p>选择你的壁纸（文件不得超过2M,过大会导致设置失败）：</p>
+                <p class="tip">
+                    2M是猜测可行的文件大小，你选择的图片会被转为base64存储在localstorage中，转为base64后的大小会比原文件大，如果设置壁纸失败，你应第一时间知道可能是由于所选图片过大导致的，建议使用jpg格式图片，png可能会导致转换后的base64过大超出localstorage的最大存储
+                </p>
+                <p><input type="file" name="bgimage" id="bgimage" accept="image/*"></p>
+            </div>
+        </div>
+    </div>
+    <div class="search">
+        <h2>搜索引擎</h2>
+        <div class="addSE">
+            <h3>添加搜索引擎</h3>
+            <p>触发命令:</p>
+            <input type="text" name="se-cmd" id="se-cmd" placeholder="该命令不能含有空格">
+            <p>搜索引擎名称:</p>
+            <input type="text" name="se-name" id="se-name" placeholder="请输入该搜索引擎名称">
+            <p>搜索引擎url:</p>
+            <input type="text" name="se-url" id="se-url" placeholder="url中关键词部分用{{keyword}}代替">
+            <button id="add-se">添加</button>
+        </div>
+        <span>默认搜索引擎：</span>
+        <select name="defaultengine" id="defaultengine">
+            <option value="bd">baidu</option>
+        </select>
+        <div id="searchlist">
+            <table>
+                <thead>
+                    <tr>
+                        <th>命令</th>
+                        <th>名称</th>
+                        <th>url</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="go">
+        <h2>go命令</h2>
+        <p>你可以在你想要添加的页面打开时点击浏览器右上方该扩展的图标将其添加到go命令</p>
+        <div id="golist">
+            <table>
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>url</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../utils/chromeAPI.js"></script>
+    <script src="../utils/tools.js"></script>
+    <script src="options.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "IO NewTab",
+    "version": "1.0.0",
+    "description": "A simple and powerful newtab page.",
+    "homepage_url": "http://xyz-studio.xyz",
+    "icons": {
+        "16": "assets/ico16.png",
+        "32": "assets/ico32.png",
+        "64": "assets/ico64.png",
+        "128": "assets/ico128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "assets/ico16.png",
+            "32": "assets/ico32.png"
+        },
+        "default_title": "IO NewTab",
+        "default_popup": "popup/popup.html"
+    },
+    "options_ui": {
+        "page": "options/options.html",
+        "open_in_tab": false
+    },
+    "chrome_url_overrides": {
+        "newtab": "newtab/newtab.html"
+    },
+    "permissions": [
+        "storage",
+        "tabs"
+    ]
+}

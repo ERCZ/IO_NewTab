@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div id="popup">
+        <p id="tip"></p>
+        <div class="container">
+            <label for="sitename">
+                名称：<br />
+                <input type="text" name="sitename" id="sitename" placeholder="给该网址起一个方便你记忆的名称(不含空格)" autofocus>
+            </label>
+        </div>
+        <div class="container">
+            <label for="siteurl">
+                网址：<br />
+                <input type="text" name="siteurl" id="siteurl" disabled>
+            </label>
+        </div>
+
+        <button>添加到go命令</button>
+    </div>
+
+    <script src="../utils/chromeAPI.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
